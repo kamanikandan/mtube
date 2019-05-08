@@ -1,0 +1,37 @@
+<i *ngIf="isloading" class="fas fa-spinner preloader"></i>
+<section class="text-white pt-4 mb-4" *ngIf="movie">
+  <div class="container p-4 movie-info">
+    <div class="row">
+      <div class="col col-md-4">
+        <img src="{{movie.images.poster}}" alt="">
+      </div>
+      <div class="col col-md-8 text-left">
+        <h1>{{ movie.title }}</h1>
+        <p>Certification: {{ movie.certification }}</p>
+        <p>Genre:
+          <app-genres [genres]="movie.genres"></app-genres>
+        </p>
+        <p>Released: {{ movie.year }}</p>
+        <p>Rating: {{ movie.rating.percentage }}%</p>
+        <button class="btn btn-danger" (click)="showYoutubeVideo()"><i class="fas fa-play"></i> Watch Trailer</button>
+        <p>Running Time: {{ movie.runtime }} Mins </p>
+        <div>
+          <h2>Synopsis</h2>
+          <p> {{ movie.synopsis }} </p>
+          <div>
+            <a class="mr-2 btn btn-primary" target="_blank" href="https://www.imdb.com/title/{{movie.imdb_id}}">View on IMDB</a>
+            <a class="btn btn-secondary" routerLink="/">Go Back Home</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<ng-container *ngIf="movieShow">
+  <div (click)="hideYoutubeVideo()" class="youtube-overlay"></div>
+  <section class="youtube-video">
+    <i (click)="hideYoutubeVideo()" class="far fa-times-circle"></i>
+    <div [innerHTML]="youtubeHTML"></div>
+  </section>
+</ng-container>

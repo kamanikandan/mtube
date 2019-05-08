@@ -1,0 +1,10 @@
+<a routerLink="{{ getCurrentURL() }}{{movie.imdb_id}}" class="card h-100 bg-movie-card bg-dark text-white">
+  <img class="card-img-top" [src]="movie.images.poster" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title display-3">{{ movie.title }}</h5>
+    <!-- <p class="card-text">
+      <span *ngIf="movie.certification" class="certification p-1 pl-2 pr-2">{{ movie.certification }}</span>
+      <app-genres *ngIf="movie.genres" [genres]="movie.genres"></app-genres>
+    </p> -->
+  </div>
+</a>

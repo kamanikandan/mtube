@@ -1,0 +1,12 @@
+<i *ngIf="isloading" class="fas fa-spinner preloader"></i>
+<section class="movies-row pt-4">
+  <div class="container">
+    <div class="row no-gutters">
+      <ng-container *ngFor="let movie of movies">
+        <div class="col col-md-3">
+          <movie-card [movie]="movie"></movie-card>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</section>

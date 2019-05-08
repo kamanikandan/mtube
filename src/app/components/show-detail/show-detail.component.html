@@ -1,0 +1,25 @@
+<i *ngIf="isloading" class="fas fa-spinner preloader"></i>
+<section class="text-white pt-4 mb-4" *ngIf="show">
+  <div class="container p-4 movie-info">
+    <div class="row">
+      <div class="col col-md-4">
+        <img src="{{show.images.poster}}" alt="">
+      </div>
+      <div class="col col-md-8 text-left">
+        <h1>{{ show.title }}</h1>
+        <p>Released: {{ show.year }}</p>
+        <p>Rating: {{ show.rating.percentage }}%</p>
+        <button class="btn btn-danger" (click)="showYoutubeVideo()"><i class="fas fa-play"></i> Watch Trailer</button>
+        <p>Running Time: {{ show.runtime }} Mins </p>
+        <div>
+          <h2>Synopsis</h2>
+          <p> {{ show.synopsis }} </p>
+          <div>
+            <a class="mr-2 btn btn-primary" target="_blank" href="https://www.imdb.com/title/{{show.imdb_id}}">View on IMDB</a>
+            <a class="btn btn-secondary" routerLink="/">Go Back Home</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

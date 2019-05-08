@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/scss/bootstrap";
+
+.bg-black {
+  background: #000000;
+  color: #f3f3f3;
+}
+img {
+  width: 100%;
+}
+.preloader {
+  position: fixed;
+  z-index: 3;
+  font-size: 35px;
+  text-align: center;
+  top: 40%;
+  width: 100%;
+}
